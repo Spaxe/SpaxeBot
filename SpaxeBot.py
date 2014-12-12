@@ -37,14 +37,16 @@ def main(cmds):
     print search(query)
   if query.startswith('define'):
     print dictionary(query[7:].rstrip())
+  if query.startswith('look up'):
+    search(query[7:].strip())
   if query.startswith('python'):
     api_python(query[7:].strip())
   if query.startswith('look up python'):
     api_python(query[14:].strip())
   if query.startswith('processing'):
-    print api_processing(query[11:].lstrip())
+    print api_processing(query[11:].lstrip() + " site:processing.org")
   if query.startswith('look up processing'):
-    print api_processing(query[18:].lstrip())
+    print api_processing(query[18:].lstrip() + " site:processing.org")
   if query.startswith('make a sound'):
     print mrraa()
   return ''
@@ -58,17 +60,14 @@ def knowledge(s):
 def maps(s):
   return "https://www.google.com/maps/search/{}".format(urllib.quote(s))
 
-def search(s):
-  return "https://duckduckgo.com/?q={}".format(urllib.quote(s))
-
 def dictionary(s):
   return "http://dictionary.reference.com/browse/{}".format(urllib.quote(s))
 
 def api_python(s):
   help(s)
 
-def api_processing(s):
-  html = urllib2.urlopen('https://duckduckgo.com/html/?q={}'.format(urllib.quote(s+" site:processing.org"))).read()
+def search(s):
+  html = urllib2.urlopen('https://duckduckgo.com/html/?q={}'.format(urllib.quote(s))).read()
   # return result
   soup = BeautifulSoup(html)
   results = []
