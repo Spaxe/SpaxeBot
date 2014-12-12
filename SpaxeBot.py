@@ -7,7 +7,7 @@ import base64
 import string
 import urllib
 import urllib2
-# from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 def lstrip2(s):
   return s.lstrip(string.punctuation+string.whitespace)
