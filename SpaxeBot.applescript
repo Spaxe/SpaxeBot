@@ -52,59 +52,63 @@ using terms from application "Messages"
 
   end addressed chat room message received
 
-  on received text invitation theText from theBuddy for theChat
+  on received text invitation theText from theBuddy for theChat with eventDescription
 
   end received text invitation
 
-  on received audio invitation theText from theBuddy for theChat
+  on received audio invitation theText from theBuddy for theChat with eventDescription
 
   end received audio invitation
 
-  on received video invitation theText from theBuddy for theChat
+  on received video invitation theText from theBuddy for theChat with eventDescription
 
   end received video invitation
 
-  on received remote screen sharing invitation from theBuddy for theChat
+  on received remote screen sharing invitation from theBuddy for theChat with eventDescription
 
   end received remote screen sharing invitation
 
-  on received local screen sharing invitation from theBuddy for theChat
+  on received local screen sharing invitation from theBuddy for theChat with eventDescription
 
   end received local screen sharing invitation
 
-  on received file transfer invitation theFileTransfer
+  on received file transfer invitation theFileTransfer with eventDescription
 
   end received file transfer invitation
 
-  on buddy authorization requested theRequest
+  on buddy authorization requested with eventDescription
 
   end buddy authorization requested
 
-  on av chat started
+  on av chat started with eventDescription
 
   end av chat started
 
-  on av chat ended
+  on av chat ended with eventDescription
 
   end av chat ended
 
-  on login finished for theService
+  on login finished for theService with eventDescription
 
   end login finished
 
-  on logout finished for theService
+  on logout finished for theService with eventDescription
 
   end logout finished
 
-  on buddy became available
+  on buddy became available with eventDescription
 
   end buddy became available
 
-  on buddy became unavailable
-
+  on buddy became unavailable with eventDescription
+    try
+      # do nothing
+    on error errMsg
+      display dialog "ERROR: " & errMsg
+    end try
   end buddy became unavailable
 
-  on completed file transfer
+  on completed file transfer with eventDescription
 
   end completed file transfer
 end using terms from
