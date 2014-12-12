@@ -7,7 +7,7 @@ import base64
 import string
 import urllib
 import urllib2
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 
 def lstrip2(s):
   return s.lstrip(string.punctuation+string.whitespace)
@@ -88,4 +88,6 @@ def about():
   return 'This clone of Spaxe was created on 11 December, 2014 at approximately 1pm.'
 
 if '__main__' in __name__:
+  print sys.version
+  return
   main(sys.argv[1])

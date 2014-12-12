@@ -12,7 +12,7 @@ end decode
 
 on SpaxeBot(str)
   set safeStr to encode(str)
-  set SpaxeBotSays to do shell script "python --version"
+  set SpaxeBotSays to do shell script "python /Users/spaxe/Dropbox/Projects/Scripts/Messages/com.apple.iChat/SpaxeBot.py " & quoted form of safeStr
   return SpaxeBotSays as string
 end SpaxeBot
 
