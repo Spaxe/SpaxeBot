@@ -40,9 +40,9 @@ def main(cmds):
   if query.startswith('look up'):
     print search(query[7:].strip())
   if query.startswith('python'):
-    api_python(query[7:].strip())
+    search(query[7:].strip() + " site:docs.python.org")
   if query.startswith('look up python'):
-    api_python(query[14:].strip())
+    search(query[14:].strip() + " site:docs.python.org")
   if query.startswith('processing'):
     print search(query[11:].lstrip() + " site:processing.org")
   if query.startswith('look up processing'):
