@@ -89,5 +89,5 @@ def about():
 
 if '__main__' in __name__:
   print sys.version
-  return
-  main(sys.argv[1])
+
+  # main(sys.argv[1])
