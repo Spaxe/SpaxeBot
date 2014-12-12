@@ -29,25 +29,25 @@ def main(cmds):
   query = lstrip2(cmd[5:]).rstrip()
   if query.startswith('how old are you'):
     print about()
-  if query.startswith('what'):
+  else if query.startswith('what'):
     print knowledge(query)
-  if query.startswith('where'):
+  else if query.startswith('where'):
     print maps(clean_question(query[5:]))
-  if query.startswith('why') or query.startswith('when'):
+  else if query.startswith('why') or query.startswith('when'):
     print search(query)
-  if query.startswith('define'):
+  else if query.startswith('define'):
     print dictionary(query[7:].rstrip())
-  if query.startswith('python'):
-    print search("{} site:docs.python.org".format())
-  if query.startswith('look up python'):
+  else if query.startswith('python'):
+    print search("{} site:docs.python.org".format(query[7:].lstrip()))
+  else if query.startswith('look up python'):
     print search("{} site:docs.python.org".format(query[14:].lstrip()))
-  if query.startswith('processing'):
+  else if query.startswith('processing'):
     print search("{} site:processing.org".format(query[11:].lstrip()))
-  if query.startswith('look up processing'):
+  else if query.startswith('look up processing'):
     print search("{} site:processing.org".format(query[18:].lstrip()))
-  if query.startswith('look up'):
+  else if query.startswith('look up'):
     print search(query[7:].strip())
-  if query.startswith('make a sound'):
+  else if query.startswith('make a sound'):
     print mrraa()
   return ''
 
