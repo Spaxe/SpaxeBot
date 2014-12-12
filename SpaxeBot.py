@@ -38,13 +38,13 @@ def main(cmds):
   if query.startswith('define'):
     print dictionary(query[7:].rstrip())
   if query.startswith('python'):
-    print search(query[7:].lstrip() + " site:docs.python.org")
+    print search("{} site:docs.python.org".format())
   if query.startswith('look up python'):
-    print search(query[14:].lstrip() + " site:docs.python.org")
+    print search("{} site:docs.python.org".format(query[14:].lstrip()))
   if query.startswith('processing'):
-    print search(query[11:].lstrip() + " site:processing.org")
+    print search("{} site:processing.org".format(query[11:].lstrip()))
   if query.startswith('look up processing'):
-    print search(query[18:].lstrip() + " site:processing.org")
+    print search("{} site:processing.org".format(query[18:].lstrip()))
   if query.startswith('look up'):
     print search(query[7:].strip())
   if query.startswith('make a sound'):
