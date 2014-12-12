@@ -88,6 +88,4 @@ def about():
   return 'This clone of Spaxe was created on 11 December, 2014 at approximately 1pm.'
 
 if '__main__' in __name__:
-  print sys.version
-
-  # main(sys.argv[1])
+  main(sys.argv[1])
