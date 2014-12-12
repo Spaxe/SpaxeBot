@@ -1,8 +1,13 @@
 #!python
+"""Super hacky for now."""
+
 import sys
+import time
 import base64
 import string
 import urllib
+import urllib2
+from bs4 import BeautifulSoup
 
 def lstrip2(s):
   return s.lstrip(string.punctuation+string.whitespace)
@@ -34,6 +39,12 @@ def main(cmds):
     print dictionary(query[7:].rstrip())
   if query.startswith('python'):
     api_python(query[7:].strip())
+  if query.startswith('look up python'):
+    api_python(query[14:].strip())
+  if query.startswith('processing'):
+    print api_processing(query[11:].lstrip())
+  if query.startswith('look up processing'):
+    print api_processing(query[18:].lstrip())
   if query.startswith('make a sound'):
     print mrraa()
   return ''
@@ -55,6 +66,20 @@ def dictionary(s):
 
 def api_python(s):
   help(s)
+
+def api_processing(s):
+  html = urllib2.urlopen('https://duckduckgo.com/html/?q={}'.format(urllib.quote(s+" site:processing.org"))).read()
+  # return result
+  soup = BeautifulSoup(html)
+  results = []
+  for s in soup.select('div.web-result'):
+    results.append(s)
+  # return soup
+  for result in results:
+    if 'web-result-sponsored' in result['class']:
+      continue
+    return result.text.strip()
+
 
 def mrraa():
   return 'Mrraa!'
