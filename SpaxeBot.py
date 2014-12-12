@@ -38,7 +38,7 @@ def main(cmds):
   if query.startswith('define'):
     print dictionary(query[7:].rstrip())
   if query.startswith('look up'):
-    search(query[7:].strip())
+    print search(query[7:].strip())
   if query.startswith('python'):
     api_python(query[7:].strip())
   if query.startswith('look up python'):
