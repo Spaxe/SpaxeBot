@@ -33,7 +33,7 @@ def main(cmds):
   if query.startswith('define'):
     print dictionary(query[7:].rstrip())
   if query.startswith('python'):
-    print api_python(query)
+    print api_python(query[7:].strip())
   if query.startswith('make a sound'):
     print mrraa()
   return ''
