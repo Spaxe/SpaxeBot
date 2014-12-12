@@ -46,7 +46,7 @@ def main(cmds):
   elif query.startswith('look up processing'):
     print search("{} site:processing.org".format(query[18:].lstrip()))
   elif query.startswith('look up'):
-    print search(query[7:].strip())
+    print search(query[7:].lstrip())
   elif query.startswith('make a sound'):
     print mrraa()
   return ''
