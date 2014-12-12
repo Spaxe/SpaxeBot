@@ -22,6 +22,8 @@ def main(cmds):
     return
 
   query = lstrip2(cmd[5:]).rstrip()
+  if query.startswith('how old are you'):
+    print about()
   if query.startswith('what'):
     print knowledge(query)
   if query.startswith('where'):
@@ -56,6 +58,9 @@ def api_python(s):
 
 def mrraa():
   return 'Mrraa!'
+
+def about():
+  return 'This clone of Spaxe was created on 11 December, 2014 at approximately 1pm.'
 
 if '__main__' in __name__:
   main(sys.argv[1])
