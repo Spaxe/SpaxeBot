@@ -44,9 +44,9 @@ def main(cmds):
   if query.startswith('look up python'):
     api_python(query[14:].strip())
   if query.startswith('processing'):
-    print api_processing(query[11:].lstrip() + " site:processing.org")
+    print search(query[11:].lstrip() + " site:processing.org")
   if query.startswith('look up processing'):
-    print api_processing(query[18:].lstrip() + " site:processing.org")
+    print search(query[18:].lstrip() + " site:processing.org")
   if query.startswith('make a sound'):
     print mrraa()
   return ''
