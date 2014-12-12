@@ -54,7 +54,7 @@ def dictionary(s):
   return "http://dictionary.reference.com/browse/{}".format(urllib.quote(s))
 
 def api_python(s):
-  return help(s)
+  help(s)
 
 def mrraa():
   return 'Mrraa!'
