@@ -30,6 +30,8 @@ def main(cmds):
     print search(query)
   if query.startswith('define'):
     print dictionary(query[7:].rstrip())
+  if query.startswith('python'):
+    print api_python(query)
   if query.startswith('make a sound'):
     print mrraa()
   return ''
@@ -48,6 +50,9 @@ def search(s):
 
 def dictionary(s):
   return "http://dictionary.reference.com/browse/{}".format(urllib.quote(s))
+
+def api_python(s):
+  return help(s)
 
 def mrraa():
   return 'Mrraa!'
